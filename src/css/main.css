@@ -1,151 +1,160 @@
-*{
+/* Define a new color palette */
+:root {
+    --primary-color: #FF8C61; /* Coral Orange */
+    --secondary-color: #72DDC2; /* Teal */
+    --background-color: #F6F1D1; /* Creamy Yellow */
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    background: #FBF2CF;
-}
-
-.input-container{
-    color: #FA7070;
+  }
+  
+  body {
+    background: var(--background-color);
+  }
+  
+  .input-container {
+    color: var(--primary-color);
     text-align: center;
     margin-top: auto;
     margin-top: 5rem;
-}
-
-#no-of-floors{
+  }
+  
+  #no-of-floors {
     border-style: none none solid;
-    border-bottom: 1px solid #A1C298;
-}
-
-#no-of-lifts{
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  
+  #no-of-lifts {
     border-style: none none solid;
-    border-bottom: 1px solid #A1C298;
+    border-bottom: 1px solid var(--secondary-color);
     margin-top: 10px;
-}
-
-button{
+  }
+  
+  button {
     margin-top: 1rem;
-    background: #A1C298;
+    background: var(--secondary-color);
     border: none;
     padding: 0.5rem 1rem;
     color: white;
     border-radius: 5px;
-}
-
-button:hover{
-    background: #a5cb9a;
-}
-
-.input-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.ui{
-  margin-top: 3rem;
-  text-align: center;
-}
-
-h3{
-    margin:0;
-    padding:0;
-    color: #A1C298;
-}
-    
-.floor-container{
+  }
+  
+  button:hover {
+    background: #4fbba9; /* Slightly darker shade of teal */
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ui {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--secondary-color);
+  }
+  
+  .floor-container {
     display: flex;
     gap: 3rem;
-    align-items: flex-end
-}
+    align-items: flex-end;
+  }
   
-.btn-box{
+  .btn-box {
     height: 100px;
     width: 5rem;
-}
-
-.floor{
-    height: 100px;
-    border-bottom: 1px solid #A1C298 ;
-}
+  }
   
-.lift {
-    background-color: #FBF2CF;
-    border: 1px solid #C6EBC5;
+  .floor {
+    height: 100px;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  
+  .lift {
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
     width: 5rem;
     height: 5rem;
     position: relative;
     overflow: hidden;
-}
+  }
   
-.cal-btn{
+  .cal-btn {
     border: none;
     width: 3rem;
     height: 1.5rem;
     border-radius: 0.2rem;
-    background-color: #FA7070;
-    color: #DFF6FF;
+    background-color: var(--primary-color);
+    color: #f0f0f0; /* Off-white */
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-}
+  }
   
-.lift-group{
+  .lift-group {
     display: flex;
     flex-wrap: no-wrap;
     gap: 2rem;
-}
+  }
   
-.lift::before {
-    background-color: #FA7070;
+  .lift::before {
+    background-color: var(--primary-color);
     content: '';
     display: block;
     position: absolute;
     block-size: 100%;
     inset-inline-start: 0.5px;
     inline-size: 49%;
-}
-
-.lift::after {
-  background-color: #FA7070;
-  content: '';
-  display: block;
-  position: absolute;
-  inset-inline-end: 0.5px;
-  block-size: 100%;
-  inline-size: 48%;
-}
-.door::before {
-  animation: left-door 6000ms ease;
-}
-
-.door::after {
-  animation: right-door 6000ms ease;
-}
+  }
   
-@keyframes left-door {
-  0% {
-    transform: translateX(0%);
+  .lift::after {
+    background-color: var(--primary-color);
+    content: '';
+    display: block;
+    position: absolute;
+    inset-inline-end: 0.5px;
+    block-size: 100%;
+    inline-size: 48%;
   }
-  50% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
   
-@keyframes right-door {
-  0% {
-    transform: translateX(0%);
+  .door::before {
+    animation: left-door 6000ms ease;
   }
-  50% {
-    transform: translateX(100%);
+  
+  .door::after {
+    animation: right-door 6000ms ease;
   }
-  100% {
-    transform: translateX(0%);
+  
+  @keyframes left-door {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
-}
+  
+  @keyframes right-door {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
