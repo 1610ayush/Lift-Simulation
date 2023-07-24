@@ -69,27 +69,26 @@ document.addEventListener('click', (e) => {
 })
 
 const initiate = (floorCall) => {
-  const lifts = Array.from(document.querySelectorAll('.lift')) 
-  const nonBusyLift = lifts.filter(lift => !lift.classList.contains('busy'))
-  let closebyLift;
-  let distance = null;
-
-  if(nonBusyLift.length){
-    for(i=0;i<nonBusyLift.length;i++){
-     const floorDistance = Math.abs(floorCall - Number(nonBusyLift[i].dataset.floor))
-     if(distance === null || floorDistance <= distance){
-       distance = floorDistance;
-       closebyLift = nonBusyLift[i]
-     } 
-     }
-       liftProgress(floorCall,closebyLift,distance)
-
-  }else{
-    setTimeout(() => {
-        initiate(floorCall)
-    },1000)
-  }
-}
+    const lifts = Array.from(document.querySelectorAll('.lift'));
+    const nonBusyLift = lifts.filter(lift => !lift.classList.contains('busy'));
+    let closebyLift;
+    let distance = null;
+  
+    if (nonBusyLift.length) {
+      for (i = 0; i < nonBusyLift.length; i++) {
+        const floorDistance = Math.abs(floorCall - Number(nonBusyLift[i].dataset.floor));
+        if (distance === null || floorDistance <= distance) {
+          distance = floorDistance;
+          closebyLift = nonBusyLift[i];
+        }
+      }
+      liftProgress(floorCall, closebyLift, distance);
+    } else {
+      setTimeout(() => {
+        initiate(floorCall);
+      }, 1000);
+    }
+  };
 
   
 const liftProgress = (floorCall,lift,distance) => {
