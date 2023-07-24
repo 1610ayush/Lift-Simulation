@@ -1,4 +1,4 @@
-Deployed on https://lift-simulation-bmqsy32g4-1610ayush.vercel.app/
+Deployed on [https://lift-simulation-bmqsy32g4-1610ayush.vercel.app/](https://lift-simulation-seven.vercel.app/)
 
 # Lift-Simulation
 Create a web app where you can simulate lift mechanics for a client
